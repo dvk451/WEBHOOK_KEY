@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
 emaHTF = request.security(syminfo.tickerid, "60", ta.ema(close, 50))
 trendConfirm = close > emaHTF  
-buySignal := buySignal and trendConfirm
+buySignal = buySignal and trendConfirm
 reversalBuy = ta.crossover(close, lowerBB) and rsi < 40
 reversalSell = ta.crossunder(close, upperBB) and rsi > 60
 
