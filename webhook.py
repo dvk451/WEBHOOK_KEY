@@ -37,11 +37,11 @@ buySignal = buySignal and trendConfirm
 reversalBuy = ta.crossover(close, lowerBB) and rsi < 40
 reversalSell = ta.crossunder(close, upperBB) and rsi > 60
 
-if reversalBuy
+if reversalBuy()
     strategy.entry("Reversal Buy", strategy.long)
     strategy.exit("TP/SL Reversal", from_entry="Reversal Buy", profit=takeProfitPerc * 0.01, loss=stopLossPerc * 0.01)
 
-if reversalSell
+if reversalSell()
     strategy.entry("Reversal Sell", strategy.short)
     strategy.exit("TP/SL Reversal", from_entry="Reversal Sell", profit=takeProfitPerc * 0.01, loss=stopLossPerc * 0.01)
 
