@@ -32,8 +32,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
 emaHTF = request.security(syminfo.tickerid, "60", ta.ema(close, 50))
-trendConfirm = close > emaHTF  // Use only if price is above HTF trend
-
+trendConfirm = close > emaHTF  
 buySignal := buySignal and trendConfirm
 reversalBuy = ta.crossover(close, lowerBB) and rsi < 40
 reversalSell = ta.crossunder(close, upperBB) and rsi > 60
