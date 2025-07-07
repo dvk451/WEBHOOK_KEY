@@ -1,0 +1,6 @@
+{
+  "action": "buy",
+  "symbol": "BTCUSDT",
+  "quantity": 0.001,
+  "key": "your_custom_webhook_key"
+}
