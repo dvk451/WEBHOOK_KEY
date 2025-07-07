@@ -30,13 +30,3 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
-strategy("Safe Entry Exit", overlay=true, margin_long=100, margin_short=100)
-
-longCondition = ta.crossover(ta.sma(close, 12), ta.sma(close, 24))
-if (longCondition)
-    strategy.entry("My Long Entry", strategy.long)
-
-shortCondition = ta.crossunder(ta.sma(close, 22), ta.sma(close, 24))
-if (shortCondition)
-    strategy.entry("My Short Entry", strategy.short)
