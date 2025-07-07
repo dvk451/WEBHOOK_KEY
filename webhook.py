@@ -31,11 +31,9 @@ def webhook():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
-// Load higher timeframe trend (e.g., 1H on 15min chart)
 emaHTF = request.security(syminfo.tickerid, "60", ta.ema(close, 50))
 trendConfirm = close > emaHTF  // Use only if price is above HTF trend
 
-// Add this to your buySignal condition:
 buySignal := buySignal and trendConfirm
 reversalBuy = ta.crossover(close, lowerBB) and rsi < 40
 reversalSell = ta.crossunder(close, upperBB) and rsi > 60
